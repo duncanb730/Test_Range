@@ -409,26 +409,27 @@ for (var i = 0; i < education.school.length; i++) {
     $(".education-entry:last").append(formattedLocation);
     var formattedMajor = HTMLschoolMajor.replace("%data%", education.school[i].major);
     $(".education-entry:last").append(formattedMajor);
-    // $("#education").append(HTMLonlineClasses);
-    // var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[i].title);
-    // $(".project-entry:last").append(formattedTitle);
-    // var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[i].school);
-    // $(".education-entry:last").append(formattedSchool);
-    // var formattedDates = HTMLonlineDates.replace("%data%", education.onlineClasses[i].dates);
-    // $(".education-entry:last").append(formattedDates);
-    // var formattedURL = HTMLonlineURL.replace("%data%", education.onlineClasses[i].URL);
-    // $(".education-entry:last").append(formattedURL)
-}
-for (var i = 0; i < education.onlineCourses.length; i++) {
     $("#education").append(HTMLonlineClasses);
-    var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[i].title);
-    $(".project-entry:last").append(formattedTitle);
-    var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[i].school);
+    var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+    $(".education-entry:last").append(formattedTitle);
+    var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
     $(".education-entry:last").append(formattedSchool);
-    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineClasses[i].dates);
+    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
     $(".education-entry:last").append(formattedDates);
-    var formattedURL = HTMLonlineURL.replace("%data%", education.onlineClasses[i].URL);
+    var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].URL);
     $(".education-entry:last").append(formattedURL)
 };
+
+// for (var i = 0; i < education.onlineCourses.length; i++) {
+//     $("#education").append(HTMLonlineClasses);
+//     var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+//     $(".education-entry:last").append(formattedTitle);
+//     var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+//     $(".education-entry:last").append(formattedSchool);
+//     var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+//     $(".education-entry:last").append(formattedDates);
+//     var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].URL);
+//     $(".education-entry:last").append(formattedURL)
+// };
 
 $("#mapDiv").append(googleMap);
