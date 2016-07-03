@@ -22,23 +22,22 @@ var projects = {
     }]
 }
 
-projects.display = function () {
-	for (project in projects.projects) {
-		if (projects.projects[project] > 0) {
-			$("#projects").append(HTMLprojectStart);
-			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-			$(".project-entry:last").append(formattedTitle);
-			var formattedDates = HTMLprojectDates.replace("%data%", project.projects[project].dates);
-			$(".project-entry:last").append(formattedDates);
-			var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[project]);
-			if (projects.projects[project].images.length >0) {
-				for (image in projects.projects[project].images) {
-					var formattedImage = HTMLprojectImage.replace("%data%", project.projects[project].images[image]);
-					$(".project-entry:last").append(formattedImage);
-				}
-			}
-		}	
-	}
-}
+projects.projects.forEach(function(project) {
+    if (projects.projects[project] > 0) {
+        $("#projects").append(HTMLprojectStart);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
+        var formattedDates = HTMLprojectDates.replace("%data%", project.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[project]);
+        if (projects.projects[project].images.length >0) {
+            for (image in projects.projects[project].images) {
+                var formattedImage = HTMLprojectImage.replace("%data%", project.projects[project].images[image]);
+                $(".project-entry:last").append(formattedImage);
+            }
+        }
+    }   
+});
+
 
 
